@@ -42,10 +42,21 @@
                             </div>
 
                             <?php
+                            if (isset($_GET['login']) && ($_GET['login']) == 'erro') {
+                            ?>
+                                <div style="text-align: center;" class="alert alert-danger mb-3">Usuário ou senhas inválidos</div>
+                            <?php
+                            }
+                            ?>
 
-                            if (isset($_GET['login']) && ($_GET['login']) == 'erro') { ?>
-                                <div class="alert alert-danger mb-3">Usuário ou senhas inválidos</div>
-                            <?php } ?>
+                            <?php
+                            if (isset($_GET['login']) && ($_GET['login']) == 'erro2') {
+                            ?>
+                                <div style="text-align: center;" class="alert alert-danger mb-3">Faça login para acessar</div>
+                            <?php
+                            }
+                            ?>
+
                             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                         </form>
                     </div>
