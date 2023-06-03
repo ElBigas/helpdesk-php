@@ -37,22 +37,46 @@ include_once 'validador.php'
         <div class="row">
 
             <div class="card-home">
+                <div class="mb-4">
+                    <h1>Bem vindo, <?php print $_SESSION["nome"]; ?></h1>
+                </div>
+
                 <div class="card">
                     <div class="card-header">
                         Menu
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6 d-flex justify-content-center">
-                                <a href="abrir_chamado.php">
-                                    <img src="formulario_abrir_chamado.png" width="70" height="70">
-                                </a>
-                            </div>
-                            <div class="col-6 d-flex justify-content-center">
-                                <a href="consultar_chamado.php">
-                                    <img src="formulario_consultar_chamado.png" width="70" height="70">
-                                </a>
-                            </div>
+
+                            <?php
+                            //arquivo de configuração
+                            include("config.php");
+
+                            //será verificado na URL o 'page' e será incluido a página correspondente
+                            switch (@$_REQUEST['page']) {
+
+                                case 'abrir-chamado':
+                                    include('abrir_chamado.php');
+                                    break;
+
+                                case 'consultar-chamado':
+                                    include('consultar_chamado.php');
+                                    break;
+
+                                default: ?>
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <a href="?page=abrir-chamado">
+                                            <img src="formulario_abrir_chamado.png" width="70" height="70">
+                                        </a>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <a href="?page=consultar-chamado">
+                                            <img src="formulario_consultar_chamado.png" width="70" height="70">
+                                        </a>
+                                    </div>
+                            <?php
+                            };
+                            ?>
                         </div>
                     </div>
                 </div>
