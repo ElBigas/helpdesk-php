@@ -57,13 +57,22 @@
                             }
                             ?>
 
+
+
                             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                         </form>
                         <div>
-                            <a href="novo-usuario.php" class="btn btn-secondary">Criar login</a>
+                            <a href="novo-usuario.php" class="btn btn-secondary">Criar novo usuário</a>
                         </div>
                     </div>
                 </div>
+                <?php
+                if (isset($_GET['login']) && ($_GET['login']) == 'success') {
+                ?>
+                    <div style="text-align: center;" class="alert alert-success mt-4">Cadastro realizado com sucesso!</div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 </body>

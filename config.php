@@ -4,4 +4,4 @@
     define('PASS', '');
     define('BASE', 'servicedesk');
 
-    $conn = new MySQLi(HOST, USER, PASS, BASE); 
+    $conexao = new MySQLi(HOST, USER, PASS, BASE); 

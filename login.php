@@ -15,7 +15,7 @@ WHERE email = '{$email}'
 AND senha = '{$senha}' ";
 
 // Executa a consulta SQL
-$res = $conn->query($sql) or die($conn->error);
+$res = $conexao->query($sql) or die($conexao->error);
 
 // Verifica se o usuário foi encontrado
 $row = $res->fetch_object();

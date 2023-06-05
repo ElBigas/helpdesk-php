@@ -30,7 +30,7 @@
                 <h1>Criar novo usuário</h1>
             </div>
 
-            <form action="?page=salvar" method="POST">
+            <form action="salvar-usuario.php" method="POST">
 
                 <input type="hidden" name="acao" value="cadastrar">
 
@@ -47,8 +47,8 @@
                     <input type="password" name="senha" class="form-control" required>
                 </div>
                 <div class="mb-3 mt-5 d-flex justify-content-between">
-                    <button class="btn btn-warning btn-lg" onclick="javascript:history.go(-1)">Voltar</button>
-                    <button id="submitCad" type="submit" class="btn btn-info btn-lg">Enviar</button>
+                    <a class="btn btn-warning btn-lg" href="index.php">Voltar</a>
+                    <button id="submitCad" type="submit" class="btn btn-info btn-lg">Criar</button>
                 </div>
             </form>
 
