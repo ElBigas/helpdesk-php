@@ -23,7 +23,7 @@ $row = $res->fetch_object();
 $qtd = $res->num_rows;
 
 if ($qtd > 0) {
-    // Inicia a sessão e guarda os dados do usuário
+    // Inicia a sessão, guarda os dados do usuário e autentifica o usuário
     $_SESSION["email"] = $email;
     $_SESSION["nome"] = $row->nome;
     $_SESSION['autenticado'] = 'YES';

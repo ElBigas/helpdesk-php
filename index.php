@@ -60,7 +60,7 @@
                             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                         </form>
                         <div>
-                            <a href="" class="btn btn-secondary">Criar login</a>
+                            <a href="novo-usuario.php" class="btn btn-secondary">Criar login</a>
                         </div>
                     </div>
                 </div>

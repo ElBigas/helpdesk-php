@@ -11,7 +11,9 @@ include_once 'validador.php'
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-        .card-home {
+        .card-home,
+        .card-abrir-chamado,
+        .card-consultar-chamado {
             padding: 30px 0 0 0;
             width: 100%;
             margin: 0 auto;
@@ -36,34 +38,33 @@ include_once 'validador.php'
     <div class="container">
         <div class="row">
 
-            <div class="card-home">
-                <div class="mb-4">
-                    <h1>Bem vindo, <?php print $_SESSION["nome"]; ?></h1>
-                </div>
+            <?php
+            //arquivo de configuração
+            include("config.php");
 
-                <div class="card">
-                    <div class="card-header">
-                        Menu
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
+            //será verificado na URL o 'page' e será incluido a página correspondente
+            switch (@$_REQUEST['page']) {
 
-                            <?php
-                            //arquivo de configuração
-                            include("config.php");
+                case 'abrir-chamado':
+                    include('abrir_chamado.php');
+                    break;
 
-                            //será verificado na URL o 'page' e será incluido a página correspondente
-                            switch (@$_REQUEST['page']) {
+                case 'consultar-chamado':
+                    include('consultar_chamado.php');
+                    break;
 
-                                case 'abrir-chamado':
-                                    include('abrir_chamado.php');
-                                    break;
+                default: ?>
+                    <div class="card-home">
+                        <div class="mb-4">
+                            <h1>Bem vindo, <?php print $_SESSION["nome"]; ?></h1>
+                        </div>
 
-                                case 'consultar-chamado':
-                                    include('consultar_chamado.php');
-                                    break;
-
-                                default: ?>
+                        <div class="card">
+                            <div class="card-header">
+                                Menu
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
                                     <div class="col-6 d-flex justify-content-center">
                                         <a href="?page=abrir-chamado">
                                             <img src="formulario_abrir_chamado.png" width="70" height="70">
@@ -74,14 +75,15 @@ include_once 'validador.php'
                                             <img src="formulario_consultar_chamado.png" width="70" height="70">
                                         </a>
                                     </div>
-                            <?php
-                            };
-                            ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+            <?php
+            };
+            ?>
         </div>
+    </div>
 </body>
 
 </html>
