@@ -83,7 +83,19 @@ include_once 'validador.php'
             };
             ?>
         </div>
+        <?php
+        if (isset($_GET['page']) && ($_GET['page']) == 'success') {
+        ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success mt-4" role="alert">
+                    Chamado criado com sucesso!
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     </div>
+
 </body>
 
 </html>

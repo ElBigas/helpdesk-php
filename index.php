@@ -57,8 +57,6 @@
                             }
                             ?>
 
-
-
                             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                         </form>
                         <div>

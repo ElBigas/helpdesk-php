@@ -19,10 +19,10 @@ $resultado = $conexao->query($sql);
 //caso o resultado for positivo, irá apresentar uma mensagem de sucesso, caso contrário uma informando erro
 if ($resultado) {
     print "<script>
-            location.href='index.php?login=success'; 
-            </script>";
+            location.href='index.php?page=success'; 
+        </script>";
 } else {
     print "<script>
             alert('Houve um erro')
-            </script>";
+        </script>";
 }
