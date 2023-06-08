@@ -22,17 +22,21 @@
 
                     ?> <div class="card mb-3 bg-light">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php print "Ticket $row->id [$row->titulo]" ?></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"><?php print "$row->categoria" ?></h6>
-                                    <p class="card-text"><?php print "$row->descricao" ?></p>
+                                    <h5 class="card-title"><?php echo "Ticket $row->id [$row->titulo]" ?></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"><?php echo "$row->categoria" ?></h6>
+                                    <p class="card-text"><?php echo "$row->descricao" ?></p>
+                                    <?php
 
+                                    echo '<a href="?page=editar&id=' . $row->id . '" class="btn btn-success">Editar</a>
+                                    <button onclick="if(confirm(\'Tem certeza que deseja excluir?\')){location.href=\'?page=salvar&acao=excluir&id=' . $row->id . '\'}else{false};" class="btn btn-danger">Excluir</button>';
+                                    ?>
                                 </div>
                             </div>
 
                     <?php
                         }
                     } else {
-                        print '<p class="alert alert-danger">Não foram encontrados resultados!</p>';
+                        echo '<p class="alert alert-danger">Não foram encontrados resultados!</p>';
                     }
                     ?>
 

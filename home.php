@@ -53,6 +53,11 @@ include_once 'validador.php'
                     include('consultar_chamado.php');
                     break;
 
+                case 'editar':
+                    include('editar-chamado.php');
+
+                    break;
+
                 default: ?>
                     <div class="card-home">
                         <div class="mb-4">
