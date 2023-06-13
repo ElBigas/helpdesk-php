@@ -1,5 +1,7 @@
 <?php
-include_once 'validador.php'
+include_once 'validador.php';
+
+include("config.php");
 ?>
 
 <html>
@@ -39,8 +41,6 @@ include_once 'validador.php'
         <div class="row">
 
             <?php
-            //arquivo de configuração
-            include("config.php");
 
             //será verificado na URL o 'page' e será incluido a página correspondente
             switch (@$_REQUEST['page']) {
@@ -93,11 +93,31 @@ include_once 'validador.php'
         ?>
             <div class="row justify-content-center">
                 <div class="alert alert-success mt-4" role="alert">
-                    Chamado criado com sucesso!
+                    Chamado <b>criado</b> com sucesso!
+                </div>
+            </div>
+            <?php
+        }
+            ?><?php
+                if (isset($_GET['page']) && ($_GET['page']) == 'editado') {
+                ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success mt-4" role="alert">
+                    Chamado <b>editado</b> com sucesso!
+                </div>
+            </div>
+            <?php
+                }
+            ?><?php
+                if (isset($_GET['page']) && ($_GET['page']) == 'resolvido') {
+                ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success mt-4" role="alert">
+                    Chamado <b>resolvido</b> com sucesso!
                 </div>
             </div>
         <?php
-        }
+                }
         ?>
     </div>
 

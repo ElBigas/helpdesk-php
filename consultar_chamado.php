@@ -28,7 +28,7 @@
                                     <?php
 
                                     echo '<a href="?page=editar&id=' . $row->id . '" class="btn btn-success">Editar</a>
-                                    <button onclick="if(confirm(\'Tem certeza que deseja resolver o chamado?\')){location.href=\'?page=salvar&acao=resolver&id=' . $row->id . '\'}else{false};" class="btn btn-danger">Resolver</button>';
+                                    <button onclick="if(confirm(\'Tem certeza que deseja resolver o chamado?\')){location.href=\'resolver.php?id=' . $row->id . '\'}else{false};" class="btn btn-danger">Resolver</button>';
                                     ?>
                                 </div>
                             </div>

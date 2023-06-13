@@ -8,6 +8,7 @@
                 <div class="col">
 
                     <form method="POST" action="registra_chamado.php">
+                        <input type="hidden" name="acao" value="registrar">
                         <div class="form-group">
                             <label>Título</label>
                             <input name="titulo" type="text" class="form-control" placeholder="Título" required>

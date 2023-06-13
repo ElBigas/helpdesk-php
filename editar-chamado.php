@@ -44,7 +44,7 @@
 
                         <div class="form-group">
                             <label>Descrição</label>
-                            <textarea style="resize: none" name="descricao" class="form-control" rows="3" required value="<?php print $row->descricao; ?>"></textarea>
+                            <textarea style="resize: none" name="descricao" class="form-control" rows="3" required><?php print $row->descricao; ?></textarea>
                         </div>
 
                         <div class="row mt-5">
